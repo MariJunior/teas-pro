@@ -1,0 +1,39 @@
+.input {
+  width: 100%;
+  min-width: 280px;
+  padding: 13px 10px;
+
+  font-size: $base-font-size;
+  font-weight: 300;
+  text-align: center;
+  color: $base-text-color;
+  text-transform: uppercase;
+  letter-spacing: $base-letter-spacing;
+
+  background-color: $transparent-bg-color;
+  border: 1px solid $base-border-color;
+
+  transition: $base-transition;
+  outline: none;
+
+  &--left {
+    text-align: left;
+  }
+
+  &--error {
+    border: 1px solid $error-border-color;
+  }
+
+  &::placeholder {
+    color: $placeholder-text-color;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $additional-border-color;
+  }
+
+  &--error:hover {
+    border: 1px solid $error-border-color;
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Описание проекта, его назначения",
+  "scripts": {
+    "test": "npm run test:editor && npm run test:pug && npm run test:style",
+    "test:editor": "editorconfig-cli",
+    "test:pug": "glob-exec \"source/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\"",
+    "test:style": "stylelint \"source/sass/**/*.scss\" --syntax=scss",
+    "test:js": "eslint source/js/**/*.js",
+    "start": "gulp",
+    "build": "gulp build",
+    "lec": "gulp correct-line-ending",
+    "lint-staged": "lint-staged"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.scss"
+  ],
+  "lint-staged": {
+    "*.{js,pug,md, !(/build/js/*.js)}": "editorconfig-cli",
+    "*.pug": "pug-lint",
+    "*.scss": "stylelint --syntax=scss",
+    "*.js": "eslint"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@htmlacademy/editorconfig-cli": "1.x",
+    "ajv": "^6.4.0",
+    "autoprefixer": "9.7.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.24.7",
+    "del": "^5.1.0",
+    "eslint": "^6.6.0",
+    "glob-exec": "^0.1.1",
+    "gulp": "^4.0.2",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-html-prettify": "^0.0.1",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-is-binary": "^0.1.2",
+    "gulp-line-ending-corrector": "^1.0.3",
+    "gulp-plumber": "1.2.x",
+    "gulp-postcss": "8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-uglify": "^3.0.0",
+    "husky": "^3.0.9",
+    "jpegtran-bin": "^5.0.2",
+    "lint-staged": "^9.4.2",
+    "merge": "^2.1.0",
+    "mkdirp": "^1.0.4",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "pug-lint": "^2.5.0",
+    "stylelint": "11.1.1",
+    "stylelint-config-htmlacademy": "0.1.x",
+    "webpack": "^4.33.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "imask": "^6.0.5",
+    "jquery": "^3.4.1",
+    "object-fit-images": "^3.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

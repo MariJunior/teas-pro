@@ -1,0 +1,209 @@
+.button {
+  position: relative;
+
+  display: inline-block;
+  min-width: 280px;
+  min-height: 50px;
+  padding: 12px 25px;
+
+  font-size: $medium-font-size;
+  font-weight: 500;
+  line-height: $medium-line-height;
+  text-align: center;
+  color: $base-text-color;
+  text-transform: uppercase;
+
+  background-color: $transparent-bg-color;
+  border: none;
+  cursor: pointer;
+
+  transition: $long-transition;
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--intext {
+    vertical-align: middle;
+  }
+
+  &--attention {
+    overflow: hidden;
+  }
+
+  &__svg,
+  &__rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+  }
+
+  &__rect {
+    transition: $long-transition;
+
+    stroke-dasharray: 30% 300%;
+    stroke-width: 4px;
+
+    &--yellow {
+      stroke: $additional-border-color;
+      stroke-dashoffset: 15%;
+    }
+
+    &--white {
+      stroke: $base-border-color;
+      stroke-dashoffset: 180%;
+    }
+  }
+
+  &__accent {
+    color: $secondary-text-color;
+
+    transition: $long-transition;
+  }
+
+  &__line {
+    position: absolute;
+
+    display: block;
+
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--first {
+      top: 0;
+      left: -320px;
+
+      width: 100%;
+      height: 4px;
+
+      background-color: $additional-border-color;
+      border-top-right-radius: 1px;
+      border-bottom-right-radius: 1px;
+
+      animation-name: line1;
+      animation-delay: 1s;
+    }
+
+    &--second {
+      top: -50px;
+      right: 0;
+
+      width: 4px;
+      height: 100%;
+
+      border-bottom-right-radius: 1px;
+      border-bottom-left-radius: 1px;
+
+      animation-name: line2;
+      animation-delay: 2s;
+    }
+
+    &--third {
+      right: -320px;
+      bottom: 0;
+
+      width: 100%;
+      height: 4px;
+
+      background-color: $base-border-color;
+      border-top-left-radius: 1px;
+      border-bottom-left-radius: 1px;
+
+      animation-name: line3;
+      animation-delay: 3s;
+    }
+
+    &--fourth {
+      bottom: -50px;
+      left: 0;
+
+      width: 4px;
+      height: 100%;
+
+      border-top-left-radius: 1px;
+      border-top-right-radius: 1px;
+
+      animation-name: line4;
+      animation-delay: 4s;
+    }
+  }
+}
+
+.button:hover,
+.button:focus {
+  color: $secondary-text-color;
+
+  & .button__rect {
+    &--yellow {
+      stroke: $base-border-color;
+      stroke-dashoffset: 345%;
+    }
+
+    &--white {
+      stroke: $additional-border-color;
+      stroke-dashoffset: 510%;
+    }
+  }
+
+  & .button__accent {
+    color: $base-text-color;
+  }
+
+  & .button__line {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes line1 {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes line2 {
+  from {
+    top: -100%;
+
+    background-color: $additional-border-color;
+  }
+
+  to {
+    top: 100%;
+
+    background-color: $base-border-color;
+  }
+}
+
+@keyframes line3 {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes line4 {
+  from {
+    bottom: -100%;
+
+    background-color: $base-border-color;
+  }
+
+  to {
+    bottom: 100%;
+
+    background-color: $additional-border-color;
+  }
+}

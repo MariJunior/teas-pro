@@ -1,0 +1,81 @@
+// Цвета
+
+$main-color:                   #f2f2f2;
+$additional-color:             #fcb51e;
+$contrast-color:               #000000;
+$additional-contrast-color:    #2c2c2c;
+$error-color:                  #eb5757;
+
+$base-bg-color:                $contrast-color;
+$secondary-bg-color:           $additional-contrast-color;
+$transparent-bg-color:         rgba(26, 26, 26, 0.8);
+$darkest-transparent-bg-color: rgba(0, 0, 0, 0.8);
+$header-bg-color:              #0d0d0d;
+$popup-bg-color:               #0d0d0d;
+$bright-bg-color:              $additional-color;
+$bright-additional-bg-color:   $main-color;
+
+$base-text-color:              $main-color;
+$secondary-text-color:         $additional-color;
+$placeholder-text-color:       #4f4f4f;
+$footer-text-color:            #cccccc;
+$light-text-color:             #ffffff;
+$other-text-color:             $contrast-color;
+
+$base-border-color:            $main-color;
+$additional-border-color:      $additional-color;
+$error-border-color:           $error-color;
+$th-border-color:              #1a1a1a;
+$td-border-color:              rgba(196, 196, 196, 0.6);
+
+$popup-shadow-color:           rgba(252, 141, 30, 0.5);
+
+
+// Размеры шрифтов
+
+$base-font-size:               18px;
+$extra-small-font-size:        14px;
+$small-font-size:              16px;
+$medium-font-size:             22px;
+$big-font-size:                24px;
+$title-font-size:              36px;
+$big-title-font-size:          48px;
+$extra-title-font-size:        64px;
+
+
+// Интерлиньяж
+
+$base-line-height:             21px;
+$extra-small-line-height:      16px;
+$small-line-height:            19px;
+$medium-line-height:           26px;
+$big-line-height:              28px;
+$title-line-height:            42px;
+$big-title-line-height:        56px;
+$extra-title--linee-height:    75px;
+
+
+// Прочее
+
+$base-letter-spacing:          0.02em;
+$big-letter-spacing:           0.08em;
+
+$base-transition:              all 1s;
+$long-transition:              all 3s;
+
+
+// Брейкпоинты
+
+$screen-sm:                    320px;
+$screen-md:                    768px;
+$screen-lg:                    960px;
+$screen-xl:                    1200px;
+$screen-xxl:                   1650px;
+
+$container-width:              1680px;
+
+
+//Для ретины
+
+// $retina-dpi: 144dpi;
+// $retina-dppx: 1.5dppx;

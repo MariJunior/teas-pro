@@ -1,0 +1,30 @@
+// Миксины
+@import "mixins/object-fit";
+@import "mixins/font-face";
+@import "mixins/min-max";
+// Общие для всего проекта файлы
+@import "common/variables";
+@import "common/fonts";
+@import "common/global";
+// Блоки
+// Общие блоки
+@import "blocks/visually-hidden";
+@import "blocks/page-container";
+@import "blocks/page-header";
+@import "blocks/section-title";
+@import "blocks/container";
+@import "blocks/button";
+@import "blocks/input";
+@import "blocks/page-footer";
+// Специфичные блоки
+@import "blocks/navigation-list";
+@import "blocks/intro-block";
+@import "blocks/advantages";
+@import "blocks/products";
+@import "blocks/feedback";
+@import "blocks/order";
+@import "blocks/links";
+@import "blocks/map";
+@import "blocks/pop-up";
+// Импорт стилей плагинов из node_modules
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";

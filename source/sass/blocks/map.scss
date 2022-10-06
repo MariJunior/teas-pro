@@ -1,0 +1,79 @@
+.map {
+  padding-bottom: 60px;
+
+  &__container {
+    position: relative;
+
+    width: 100%;
+    height: 228px;
+    max-height: 80vh;
+    overflow: hidden;
+
+    background-image: url("../img/map-bg.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 17px;
+      left: 38%;
+
+      width: 320px;
+      height: 100px;
+
+      background-image: url("../img/map-place.png");
+    }
+
+    & .mapboxgl-popup-content {
+      background-color: #666666;
+    }
+
+    & .mapboxgl-popup-tip {
+      border-top-color: #666666;
+    }
+
+    & a {
+      color: $secondary-text-color;
+    }
+  }
+
+  &__block {
+    z-index: 100;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: $screen-md) {
+  .map {
+    &__container {
+      height: 390px;
+
+      &::after {
+        top: 104px;
+        left: 44.14%;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .map__container {
+    height: 500px;
+  }
+}
+
+@media (min-width: $screen-xxl) {
+  .map {
+    max-width: $container-width;
+    margin-right: auto;
+    margin-left: auto;
+
+    &__container {
+      height: 800px;
+    }
+  }
+}

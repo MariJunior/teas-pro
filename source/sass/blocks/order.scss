@@ -1,0 +1,137 @@
+.order {
+  padding-bottom: 70px;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__image {
+    margin-bottom: 50px;
+  }
+
+  &__lead {
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+  &__procedure {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style: none;
+
+    counter-reset: step-counter;
+  }
+
+  &__procedure-item {
+    position: relative;
+
+    min-width: 180px;
+    width: 47.32%;
+    min-height: 60px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    padding-left: 45px;
+
+    font-weight: 700;
+
+    counter-increment: step-counter;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+
+    &::before {
+      content: counter(step-counter);
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 60px;
+      color: #333333;
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .order {
+    padding-bottom: 150px;
+
+    &__procedure-item {
+      width: 22.9%;
+      margin-bottom: 0;
+
+      &:nth-child(even) {
+        margin-right: 20px;
+      }
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .order {
+    &__wrap {
+      min-height: 400px;
+      padding-bottom: 100px;
+      padding-left: 59%;
+
+      background-image: url("../img/order-map.png");
+      background-repeat: no-repeat;
+      background-position: 20px center;
+      background-size: 46% auto;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $screen-xxl) {
+  .order {
+    max-width: 1600px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 340px;
+
+    &__wrap {
+      min-height: 510px;
+
+      background-size: 788px 408px;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__procedure-item {
+      min-height: 116px;
+      padding-left: 95px;
+
+      font-size: $title-font-size;
+      line-height: $title-line-height;
+
+      &::before {
+        font-size: 144px;
+        line-height: 119px;
+      }
+    }
+  }
+}
